@@ -1,0 +1,115 @@
+{
+  "schema": "huginn-h256-early-r9-export-provenance-v1",
+  "interpretation": "Exploratory reused-R9 test exports for already-fixed R1source/R4source final checkpoints. The common output worker writes test_scored_only_after_all_training=true unconditionally; that field is inaccurate for this early authorized export and must not be treated as evidence that every registered mode had finished.",
+  "truthful_status": {
+    "each_scored_checkpoint_was_fixed_final_before_its_test_access": true,
+    "other_preregistered_arm_training_in_progress": [
+      "R4untiedsource seed17",
+      "R4untiedsource seed29"
+    ],
+    "registered_configs_or_doses_changed_after_test_access": false,
+    "checkpoint_selection_or_hyperparameter_choice_from_test": false,
+    "test_scored_only_after_all_registered_training": false,
+    "scope": "Exploratory reused R9; no independent confirmatory test claim.",
+    "completed_registered_h256_fits_at_test_access": 4,
+    "registered_h256_fits_total": 6,
+    "remaining_prespecified_h256_fits": [
+      "R4untiedsource seed17",
+      "R4untiedsource seed29"
+    ],
+    "no_postaccess_config_or_dose_changes": true
+  },
+  "pins": {
+    "training_backbone_sha256": "f8a7ec8c19194dc31cceb64d5ffad0827e93a83c61a4de348757ee7cfff928db",
+    "export_worker_sha256": "786263148b9cb593e19c0521d5f460dbd66692cec4ace4a4f6fc57a0cc2215e1",
+    "initial_R1_training_worker_sha256": "6af021ba05aa2b71f7064e7abc49e14f7a6dd2de07e156571b906e01d98c8206",
+    "test_indices_sha256": "40dec33232ce369bb3e0b9f67dcafc1afd298899543de065b216501944297083",
+    "test_event_order_sha256_uint32": "628338e018d700881923c5059861e8d47c2b909b2c6fcea9cca78625a30600fa",
+    "eval_seed": 20261025,
+    "test_events": 232049,
+    "batch_size": 128
+  },
+  "exports": [
+    {
+      "seed": 17,
+      "arm": "R1source",
+      "start_utc": "2026-10-25T20:16:29.391312Z",
+      "end_utc": "2026-10-25T20:20:15.963745Z",
+      "job_sha256": "b0153b27a7f97502511c43cc8741a2bdf646a594e0c94a2abdfebf37f1c336d2",
+      "checkpoint_sha256": "b55f4bf02b5ba99090144e45ccc954507b00b7d03fbb804a7b0773be6bf79ec5",
+      "raw_result_path": "test-export/results/seed17/R1source/test-result.json",
+      "raw_ranks_path": "test-export/results/seed17/R1source/test-ranks.npz",
+      "raw_result_sha256": "da6112b761d4174cca7e6db0e94fb6c12bf1ed64f8a5ad2bb24a1b4513952ca4",
+      "raw_ranks_sha256": "4dc5ae08c91c24c44f020e89b4b9870f9ae66c9de3c97ad33adbede2369c1df4",
+      "metadata_overrides": {
+        "test_scored_only_after_all_training": false,
+        "scored_checkpoint_final_before_test_access": true,
+        "other_prespecified_h256_fits_still_training": [
+          "R4untiedsource seed17",
+          "R4untiedsource seed29"
+        ]
+      }
+    },
+    {
+      "seed": 29,
+      "arm": "R1source",
+      "start_utc": "2026-10-25T20:16:29.384312Z",
+      "end_utc": "2026-10-25T20:20:15.714026Z",
+      "job_sha256": "f8878d01739bd25e1abb9a40f41f7b6e32c4614e1a956fb4b58f0944d5f113c2",
+      "checkpoint_sha256": "374fcd1b53025f297ed05b0507f6d6dbde5661be487e41d6df0110dfc229a9de",
+      "raw_result_path": "test-export/results/seed29/R1source/test-result.json",
+      "raw_ranks_path": "test-export/results/seed29/R1source/test-ranks.npz",
+      "raw_result_sha256": "a7673f49d6b7aed5abe8eea93d9e1d6c7cb279ab80d625362032127b53204b23",
+      "raw_ranks_sha256": "a8d4d583be0f5f75a9813dc04a014a64cee14a52f18dabb6e92139e8e206154c",
+      "metadata_overrides": {
+        "test_scored_only_after_all_training": false,
+        "scored_checkpoint_final_before_test_access": true,
+        "other_prespecified_h256_fits_still_training": [
+          "R4untiedsource seed17",
+          "R4untiedsource seed29"
+        ]
+      }
+    },
+    {
+      "seed": 17,
+      "arm": "R4source",
+      "start_utc": "2026-10-25T20:21:06.208783Z",
+      "end_utc": "2026-10-25T20:25:14.130164Z",
+      "job_sha256": "30bbf2d0a307f006da00dbd7fcfbef4467cd7fb852d900647c806059770ec039",
+      "checkpoint_sha256": "2c099d393d9c77903584f903097f4db4e9626568734cb868085b516762d47563",
+      "raw_result_path": "test-export/results/seed17/R4source/test-result.json",
+      "raw_ranks_path": "test-export/results/seed17/R4source/test-ranks.npz",
+      "raw_result_sha256": "769c0118013cee655da5a22589cbcd2c8af7cdc8f051c26c597a5580671c9035",
+      "raw_ranks_sha256": "21eb42315e88d30ad37cfb2969e75c5a43aa77b385ece7147f3c6d9140395df4",
+      "metadata_overrides": {
+        "test_scored_only_after_all_training": false,
+        "scored_checkpoint_final_before_test_access": true,
+        "other_prespecified_h256_fits_still_training": [
+          "R4untiedsource seed17",
+          "R4untiedsource seed29"
+        ]
+      }
+    },
+    {
+      "seed": 29,
+      "arm": "R4source",
+      "start_utc": "2026-10-25T20:21:06.208783Z",
+      "end_utc": "2026-10-25T20:25:18.042943Z",
+      "job_sha256": "d0ca4e9d3381da5b94c5696e7cae83e33800ab0180339da0bea56f76b0270a43",
+      "checkpoint_sha256": "0c9a74a717050b9fb97c2d899d9941ca4e4366581946caa50ce3af614ade675f",
+      "raw_result_path": "test-export/results/seed29/R4source/test-result.json",
+      "raw_ranks_path": "test-export/results/seed29/R4source/test-ranks.npz",
+      "raw_result_sha256": "5002ce0582bb2c67850b8457c5fe0a8dba300fd257611f17a33cf90a1a1289a0",
+      "raw_ranks_sha256": "96b3f68c50306b7fe588993aa8ba081605273613b9dd68e9e8b7bdda8029eb71",
+      "metadata_overrides": {
+        "test_scored_only_after_all_training": false,
+        "scored_checkpoint_final_before_test_access": true,
+        "other_prespecified_h256_fits_still_training": [
+          "R4untiedsource seed17",
+          "R4untiedsource seed29"
+        ]
+      }
+    }
+  ],
+  "study_scope": "The six-fit H256 A100 study only: R1source/R4source/R4untiedsource \u00d7 seeds17/29."
+}

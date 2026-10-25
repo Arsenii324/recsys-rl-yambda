@@ -1,0 +1,317 @@
+{
+  "schema": "rl-target-completion-strata-v1",
+  "validation_event_count": 10000,
+  "validation_event_index_sha256": "950a0d20892fec4b383091752af797bee9d4096a49be97577edc25ed0c7f0a12",
+  "data_manifest_sha256": "54c3fef4fab4899c15d93b3e7589258f5df37d182a8e0052d7fe544e38686d7a",
+  "label_source": "data/processed/yambda100k-eventuniform/played_ratio_pct.npy joined only for evaluation by exact event_index; this is the target event outcome, not an input feature",
+  "label_definition": "raw played_ratio_pct; low <50; high >=50; zero ==0; no clipping or unsupported-row filtering",
+  "bootstrap": {
+    "unit": "UID cluster resampling with replacement, preserving all sampled user rows",
+    "replicates": 1000,
+    "seed": 20261025,
+    "contrast": "two-seed mean actor metric minus frozen SFT per-query metric; conditional on these fitted actors and reused validation sample"
+  },
+  "strata": {
+    "low_lt50": {
+      "events": 3387,
+      "users": 1604,
+      "fraction": 0.3387,
+      "mean_raw_played_ratio_pct": 8.765279007971657,
+      "policies": {
+        "sft_reference": {
+          "ndcg100": 0.056844473606652485,
+          "recall100": 0.18128136994390315
+        },
+        "ce_seed17": {
+          "ndcg100": 0.06598522972754402,
+          "recall100": 0.19840566873339238
+        },
+        "ce_seed29": {
+          "ndcg100": 0.06575593091426503,
+          "recall100": 0.19988190138765868
+        },
+        "context_reinforce_seed17": {
+          "ndcg100": 0.0560878220387958,
+          "recall100": 0.1809861234130499
+        },
+        "context_reinforce_seed29": {
+          "ndcg100": 0.05476221169892546,
+          "recall100": 0.17773841157366402
+        },
+        "rloo8_seed17": {
+          "ndcg100": 0.05604498784803239,
+          "recall100": 0.1809861234130499
+        },
+        "rloo8_seed29": {
+          "ndcg100": 0.055916857844367646,
+          "recall100": 0.17921464422793032
+        },
+        "ce_two_seed_mean": {
+          "ndcg100": 0.06587058032090452,
+          "recall100": 0.19914378506052555
+        },
+        "context_reinforce_two_seed_mean": {
+          "ndcg100": 0.05542501686886063,
+          "recall100": 0.17936226749335696
+        },
+        "rloo8_two_seed_mean": {
+          "ndcg100": 0.055980922846200015,
+          "recall100": 0.18010038382049012
+        }
+      },
+      "actor_minus_sft_two_seed_mean": {
+        "ce": {
+          "ndcg100": {
+            "point": 0.009026106714252037,
+            "ci95_percentile": [
+              0.006668240830965335,
+              0.011454531285933734
+            ]
+          },
+          "recall100": {
+            "point": 0.017862415116622378,
+            "ci95_percentile": [
+              0.011365907442468251,
+              0.024986071872225377
+            ]
+          }
+        },
+        "context_reinforce": {
+          "ndcg100": {
+            "point": -0.0014194567377918549,
+            "ci95_percentile": [
+              -0.002688525683423817,
+              -7.780254979919408e-05
+            ]
+          },
+          "recall100": {
+            "point": -0.001919102450546206,
+            "ci95_percentile": [
+              -0.006015973085365752,
+              0.0022350541757533357
+            ]
+          }
+        },
+        "rloo8": {
+          "ndcg100": {
+            "point": -0.0008635507604524664,
+            "ci95_percentile": [
+              -0.0022312142979662554,
+              0.000540810272240764
+            ]
+          },
+          "recall100": {
+            "point": -0.00118098612341305,
+            "ci95_percentile": [
+              -0.00548158501579915,
+              0.00326140152080873
+            ]
+          }
+        }
+      }
+    },
+    "high_ge50": {
+      "events": 6613,
+      "users": 2597,
+      "fraction": 0.6613,
+      "mean_raw_played_ratio_pct": 97.45864206865265,
+      "policies": {
+        "sft_reference": {
+          "ndcg100": 0.06295720094066515,
+          "recall100": 0.19386057765008316
+        },
+        "ce_seed17": {
+          "ndcg100": 0.0708319539699687,
+          "recall100": 0.21397247845153486
+        },
+        "ce_seed29": {
+          "ndcg100": 0.07053590194686502,
+          "recall100": 0.21487978224708906
+        },
+        "context_reinforce_seed17": {
+          "ndcg100": 0.0605114734485581,
+          "recall100": 0.1905337970663844
+        },
+        "context_reinforce_seed29": {
+          "ndcg100": 0.061306147620534816,
+          "recall100": 0.1947678814456374
+        },
+        "rloo8_seed17": {
+          "ndcg100": 0.06162560272961291,
+          "recall100": 0.19295327385452896
+        },
+        "rloo8_seed29": {
+          "ndcg100": 0.06150302206642524,
+          "recall100": 0.19295327385452896
+        },
+        "ce_two_seed_mean": {
+          "ndcg100": 0.07068392795841687,
+          "recall100": 0.21442613034931196
+        },
+        "context_reinforce_two_seed_mean": {
+          "ndcg100": 0.060908810534546456,
+          "recall100": 0.1926508392560109
+        },
+        "rloo8_two_seed_mean": {
+          "ndcg100": 0.06156431239801908,
+          "recall100": 0.19295327385452896
+        }
+      },
+      "actor_minus_sft_two_seed_mean": {
+        "ce": {
+          "ndcg100": {
+            "point": 0.007726727017751714,
+            "ci95_percentile": [
+              0.005770190674381534,
+              0.009605827824873125
+            ]
+          },
+          "recall100": {
+            "point": 0.02056555269922879,
+            "ci95_percentile": [
+              0.014313601463301791,
+              0.026015426973932172
+            ]
+          }
+        },
+        "context_reinforce": {
+          "ndcg100": {
+            "point": -0.002048390406118693,
+            "ci95_percentile": [
+              -0.0030940704889641014,
+              -0.0010962841907381537
+            ]
+          },
+          "recall100": {
+            "point": -0.0012097383940722819,
+            "ci95_percentile": [
+              -0.00438644630206415,
+              0.0018771804668652717
+            ]
+          }
+        },
+        "rloo8": {
+          "ndcg100": {
+            "point": -0.0013928885426460732,
+            "ci95_percentile": [
+              -0.002446987071948191,
+              -0.0004440722484936484
+            ]
+          },
+          "recall100": {
+            "point": -0.0009073037955542114,
+            "ci95_percentile": [
+              -0.004201173719417214,
+              0.0029891829470648497
+            ]
+          }
+        }
+      }
+    },
+    "zero": {
+      "events": 656,
+      "users": 421,
+      "fraction": 0.0656,
+      "mean_raw_played_ratio_pct": 0.0,
+      "policies": {
+        "sft_reference": {
+          "ndcg100": 0.056671373296256475,
+          "recall100": 0.18140243902439024
+        },
+        "ce_seed17": {
+          "ndcg100": 0.06517667514158458,
+          "recall100": 0.19359756097560976
+        },
+        "ce_seed29": {
+          "ndcg100": 0.06537606746594353,
+          "recall100": 0.19664634146341464
+        },
+        "context_reinforce_seed17": {
+          "ndcg100": 0.05734071973711252,
+          "recall100": 0.1875
+        },
+        "context_reinforce_seed29": {
+          "ndcg100": 0.05552323017178512,
+          "recall100": 0.18292682926829268
+        },
+        "rloo8_seed17": {
+          "ndcg100": 0.055658254999576544,
+          "recall100": 0.18292682926829268
+        },
+        "rloo8_seed29": {
+          "ndcg100": 0.05719244307497653,
+          "recall100": 0.1798780487804878
+        },
+        "ce_two_seed_mean": {
+          "ndcg100": 0.06527637130376406,
+          "recall100": 0.1951219512195122
+        },
+        "context_reinforce_two_seed_mean": {
+          "ndcg100": 0.05643197495444882,
+          "recall100": 0.18521341463414634
+        },
+        "rloo8_two_seed_mean": {
+          "ndcg100": 0.056425349037276536,
+          "recall100": 0.18140243902439024
+        }
+      },
+      "actor_minus_sft_two_seed_mean": {
+        "ce": {
+          "ndcg100": {
+            "point": 0.008604998007507586,
+            "ci95_percentile": [
+              0.0035705629124699687,
+              0.014150836550973602
+            ]
+          },
+          "recall100": {
+            "point": 0.013719512195121951,
+            "ci95_percentile": [
+              -0.0007362018881626724,
+              0.030735222517496615
+            ]
+          }
+        },
+        "context_reinforce": {
+          "ndcg100": {
+            "point": -0.00023939834180765037,
+            "ci95_percentile": [
+              -0.002748873280530796,
+              0.0025090696693884423
+            ]
+          },
+          "recall100": {
+            "point": 0.0038109756097560975,
+            "ci95_percentile": [
+              -0.0042615452310235434,
+              0.01338841131818954
+            ]
+          }
+        },
+        "rloo8": {
+          "ndcg100": {
+            "point": -0.0002460242589799369,
+            "ci95_percentile": [
+              -0.003827452773596651,
+              0.003256469544422509
+            ]
+          },
+          "recall100": {
+            "point": 0.0,
+            "ci95_percentile": [
+              -0.01014199751663536,
+              0.010417574041811845
+            ]
+          }
+        }
+      }
+    }
+  },
+  "source_exports": {
+    "cpu_per_query_npz": "infra/attempts/reward-frontier-grouped-rl-recovery-v3/gpu-recovery/output/rl-grouped-cpu-validation-seed991.npz",
+    "sft_checkpoint_sha256": "4076631ea76eca428fb3747f4f112b33633d7c835048cf7e1b2a2f807533674d",
+    "labels_joined_by_event_index": true,
+    "masks_or_order_changed": false
+  },
+  "limits": "Exploratory association between actual logged target completion and next-item ranking metrics on reused validation data; stratification is post hoc and selected on observed target, not a causal response or counterfactual policy-value estimate. Full-query primary metrics are unchanged."
+}

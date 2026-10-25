@@ -1,0 +1,10 @@
+{
+  "dataset": "yandex/yambda",
+  "revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+  "path": "flat/50m/listens.parquet",
+  "source_url": "https://huggingface.co/datasets/yandex/yambda/resolve/dd6f3a19eef5866e346c3270e098baa641a44948/flat/50m/listens.parquet",
+  "bytes": 369110332,
+  "sha256": "eed9cbd094af1e189507d2f8132a0dc9653b90e65480125c7cdccd601e0592d1",
+  "license": "apache-2.0",
+  "schema": ["uid:uint32", "timestamp:uint32", "item_id:uint32", "is_organic:uint8", "played_ratio_pct:uint16", "track_length_seconds:uint32"]
+}

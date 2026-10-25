@@ -1,0 +1,206 @@
+{
+  "attention_implementation": "torch.nn.functional.scaled_dot_product_attention with explicit causal+key-padding allowed mask; backbone_sha256=f8a7ec8c19194dc31cceb64d5ffad0827e93a83c61a4de348757ee7cfff928db",
+  "battery": {
+    "aggregate_device_seconds_reservation": 28800,
+    "configuration_amendment": "R4 preserves the preregistered R3 scientific recipe; only worker source identity, run identity, and lower per-job/aggregate remaining-budget caps changed after R3 stopped on a telemetry-schema exception before final endpoint.",
+    "device_count_per_job": 1,
+    "job_seed": 17,
+    "jobs": "Two seed-specific one-A100 jobs, each runs R1source, R4source, R4untiedsource sequentially.",
+    "per_kernel_device_seconds_reservation": 14400,
+    "randomization": "Each paired arm invokes seed_all(seed) before ItemGPT construction and uses same declared permutation seed.",
+    "seeds": [
+      17,
+      29
+    ]
+  },
+  "comparability_tolerance": {
+    "early_abort": "After first 100 nominal updates, check every 1,000; abort an arm after two consecutive checks above 1% cumulative skipped updates. No compensation.",
+    "max_arm_skipped_update_fraction": 0.005,
+    "max_paired_applied_update_gap": 32,
+    "paired_gap_scope": "subset versus full_supported within each initialization seed",
+    "reporting": "Nominal updates/examples, applied updates, skipped updates, final scale, initial state SHA per arm. Preserve arms; if tolerance fails, make no matched comparison claim."
+  },
+  "comparison_design": "Two seeds; three modes; common full-supported exposure/order, batch, optimizer and evaluation. R4source vs R1source changes compute depth. R4source vs R4untiedsource compares shared versus untied core approximately (parameter counts differ). R4self is omitted; no no-reinjection contrast or source-access isolation claim.",
+  "configuration_amendment": "Three-arm H256 fixed-dose quality battery using fused SDPA and torch.compile(mode=reduce-overhead), common B1024 chosen from measured end-to-end profiles. R4self is omitted before quality runs; no reinjection-specific attribution is claimed.",
+  "curve_assessment": {
+    "checkpoint_selection": "fixed final; intermediate metrics are diagnostic only",
+    "underfit_interpretation": "32,000 optimizer updates per arm; do not claim training saturation without endpoint curves.",
+    "validation_steps": [
+      0,
+      16000,
+      32000
+    ]
+  },
+  "data": {
+    "arms": {
+      "full_supported": {
+        "anchor_count": 41142628,
+        "indices_file": "train_indices.npy",
+        "indices_manifest_sha256": "0e8efb8408ceb9714160b2dacce0a34779c33d0e320fb63176f6ed7514871a61",
+        "indices_sha256": "948a6d33e6a5055c868d65c59b2b81ce60ff856111c68d7659f57008f595c474",
+        "source_manifest_sha256": "aa5570c4e16cbd61e33457bd31970b356c8a49b9938de4ba90c773109bb85570"
+      },
+      "subset": {
+        "anchor_count": 4110754,
+        "indices_file": "train_indices.npy",
+        "indices_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+        "indices_sha256": "90a38ccfc2098bd78299a92c62b6cfffdceab5b354283fe9f095d3bf81fbae3c"
+      }
+    },
+    "expected_staged_payload_bytes": 1483372525,
+    "feature_dataset_id": "arsen4ikvar/recsys-yambda100k-20261019",
+    "feature_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+    "full_index_dataset_id": "arsen4ikvar/recsys-fullsupported-index-20261020",
+    "full_index_manifest_sha256": "0e8efb8408ceb9714160b2dacce0a34779c33d0e320fb63176f6ed7514871a61",
+    "full_source_manifest_sha256": "aa5570c4e16cbd61e33457bd31970b356c8a49b9938de4ba90c773109bb85570",
+    "staging_policy": {
+      "feature_arrays_staged_note": "Whole-array bytes are staged for training/validation loaders; test indices are not copied, loaded, or scored.",
+      "hash_verify_every_copied_file": true,
+      "minimum_free_disk_after_stage_bytes": 5368709120,
+      "pretrained_checkpoint_accessed": false,
+      "stage_before_cuda": true,
+      "stage_target": "/tmp local disk"
+    }
+  },
+  "evaluation": {
+    "primary": "fixed final 32.768M-example dose; full-test NDCG@100 R4source minus R1source and R4untiedsource; validation diagnostic only.",
+    "secondary": [
+      "R4source-R1source",
+      "R4source-R4untiedsource",
+      "test Recall@100",
+      "validation CE/Recall/NDCG at 0/16M/32.768M"
+    ],
+    "test_data_access": "after all final checkpoints and dose are fixed, use canonical 232049 full-test indices SHA 40dec332...; save per-query ranks and metrics for every arm; no selection on test",
+    "validation_event_sha256_uint32": "950a0d20892fec4b383091752af797bee9d4096a49be97577edc25ed0c7f0a12"
+  },
+  "gpu_launch_authorized": true,
+  "initialization": {
+    "mode": "fresh random HuginnItemGPT",
+    "pairing": "same-seed common initialized tensors; R4untiedsource stores four cloned core blocks"
+  },
+  "output_policy": {
+    "no_test_metrics_or_model_selection": true,
+    "output_size_budget_bytes": 350000000,
+    "save_final_per_query_rows_from_same_forward_pass": true,
+    "save_only_final_step_checkpoint_per_arm": true,
+    "save_validation_metrics_at_all_registered_steps": true
+  },
+  "parent": {
+    "initialization_mode": "fresh_random",
+    "optimizer_state": "fresh AdamW for each arm",
+    "pretrained_checkpoint_used": false
+  },
+  "pilot": {
+    "batch_candidates": [
+      1024
+    ],
+    "continue_condition": "Use one common selected batch and fp16 across all four modes and both seeds; train exactly 32.768M examples per mode. Stop after profile if projected completion plus frozen full-test evaluation exceeds 21:20 UTC.",
+    "dose_candidates": [
+      32768000
+    ],
+    "evaluation_reserve_seconds": 900,
+    "final_checkpoint_save_reserve_seconds": 180,
+    "locked_batch_size": 1024,
+    "measured_profile_evidence": "output/compile-R1source-gpu0.json and output/compile-R4untiedsource-gpu1.json; source SHA f8a7ec8c19194dc31cceb64d5ffad0827e93a83c61a4de348757ee7cfff928db; compiled worker SHA 6af021ba05aa2b71f7064e7abc49e14f7a6dd2de07e156571b906e01d98c8206.",
+    "profile_max_wall_seconds_per_worker": 90,
+    "profile_selection": "B1024 locked by end-to-end torch.compile(mode=reduce-overhead) A100 profiles of R1source and R4untiedsource, exact AdamW beta2=.999 recipe; no quality metric used.",
+    "profile_steps_per_arm": 48,
+    "profile_timed_steps": 32,
+    "profile_validation_metrics_used": false,
+    "profile_warm_steps": 16,
+    "profile_weights_retained": false,
+    "projection_safety_factor": 1.25,
+    "stage_and_setup_reserve_seconds": 300
+  },
+  "purpose": "A100 context-length transfer: fixed four Huginn-inspired item-ID recurrence modes, common 32.768M full-supported examples per mode/seed, fresh random initialization.",
+  "recipe": {
+    "active_arms": [
+      "R1source",
+      "R4source",
+      "R4untiedsource"
+    ],
+    "all_registered_arms": [
+      "R1source",
+      "R4source",
+      "R4untiedsource"
+    ],
+    "architecture": {
+      "dropout": 0.0,
+      "ff_mult": 4,
+      "heads": 4,
+      "max_context": 256,
+      "n_items": 100000,
+      "width": 128
+    },
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "compile_mode": "reduce-overhead",
+    "compile_model": true,
+    "evaluations": {
+      "event_count": 10000,
+      "interval_steps": 16000,
+      "primary_endpoint": "fixed final step; all four mode comparisons; no best-checkpoint selection",
+      "seed": 991,
+      "steps": [
+        0,
+        16000,
+        32000
+      ]
+    },
+    "examples_per_arm": 32768000,
+    "global_batch_size": 1024,
+    "gradient_clip_norm": 1.0,
+    "initialization": "Huginn-inspired scale-aware truncated normal; fresh random latent state per query; all common initialized tensors identical across modes",
+    "learning_rate": 0.0002,
+    "learning_rate_schedule": "constant 2e-4, transferred from successful from-scratch baseline; no warmup or decay",
+    "max_context": 256,
+    "optimizer": "AdamW, betas=(0.9,0.999), default epsilon, decoupled weight decay",
+    "optimizer_update_interpretation": "Dose selected by timing only before training; batch size common across arms; FP16 skipped updates recorded without exposure compensation.",
+    "precision": "fp16",
+    "seed": 29,
+    "seeds": [
+      17,
+      29
+    ],
+    "steps": 32000,
+    "steps_per_arm": 32000,
+    "warmup_steps": 0,
+    "weight_decay": 0.01
+  },
+  "registered_all_arms": [
+    "R1source",
+    "R4source",
+    "R4self",
+    "R4untiedsource"
+  ],
+  "registered_all_seeds": [
+    17,
+    29
+  ],
+  "resources": {
+    "accelerator": "2x A100 PCIe 40GB on authorized remote workspace",
+    "all_stage_profile_train_eval_save_count_toward_caps": true,
+    "deadline_utc": "2026-10-25T21:20:00Z",
+    "device_seconds_cap": 43200,
+    "final_checkpoint_save_reserve_seconds": 120,
+    "minimum_free_disk_bytes": 5368709120,
+    "minimum_mem_available_bytes": 524288000,
+    "profile_candidates": [
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "provider_wall_cap_seconds": 14400,
+    "queue_cutoff_seconds": 900,
+    "stage_and_setup_reserve_seconds": 300,
+    "teardown_reserve_seconds": 60,
+    "validation_reserve_seconds": 200,
+    "worker_deadline_seconds": 13800
+  },
+  "schema": "huginn-context256-a100-v1",
+  "scope": "A100x2; context length 256; one seed per GPU, four arms sequential per GPU; profile common batch/precision across both seeds before quality training.",
+  "source_sha256": "9c1e8975bf7d1311f6ebecbec0519fabc03d9581fe27f88d81da81df232c2837"
+}

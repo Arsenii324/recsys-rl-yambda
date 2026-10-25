@@ -1,0 +1,166 @@
+{
+  "scope": "exploratory cross-cohort reward/ranking display; R9 test was previously viewed; no fresh confirmation",
+  "ranking_split": "full canonical R9 test, 232049 events, OOV retained as rank101 miss",
+  "ranking_parent": "full-supported seed43 P0 SHA 36b035e517d2792e1e0027b1d27f12f92c29688727d322135159f681ee0b1ea6",
+  "data_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+  "test_indices_sha256": "40dec332",
+  "actor_npz_sha256": "5f53fe2beb6f46c4f80ca901a6743e2942e962aa13428c8a9562c59e19d9598b",
+  "beta_test_npz_sha256": "4dcd41edbbc7731d8332d8044bb9fd0cfa16f10e18b09f8d901aeda435d1ecb0",
+  "alignment_assertions": [
+    "event_index",
+    "uid",
+    "supported",
+    "organic exact equality"
+  ],
+  "expected_rm_cohort": "fixed 1024 validation contexts, query hash 27eebe3388f87343bd8989f1eb0158854e193d59b688de2a84d2aecc64c63e20; supported 878",
+  "expected_rm_parent": "frozen combined RM cd2d36b22e03e6fc7e912bba8a09d2a18a9c54cae7c2fae4b928329c9f07f197",
+  "expected_rm_interpretation": "frozen one-step proxy only; values do not share the R9 ranking event cohort",
+  "beta_exact_q": {
+    ".03": {
+      "p0_kl_to_q": 0.4211190938949585,
+      "p0_gap": 0.012633545324206352,
+      "p0_expected_rm": 0.6595188975334167,
+      "actor_expected_rm_mean": 0.6757657527923584,
+      "actor_kl_policy_to_p0_mean": 0.2728433609008789,
+      "actor_gap_mean": 0.004571994766592979
+    },
+    ".1": {
+      "p0_kl_to_q": 0.03809650242328644,
+      "p0_gap": 0.003809646237641573,
+      "p0_expected_rm": 0.6595188975334167,
+      "actor_expected_rm_mean": 0.6641217470169067,
+      "actor_kl_policy_to_p0_mean": 0.025749126449227333,
+      "actor_gap_mean": 0.0017816843464970589
+    },
+    ".3": {
+      "p0_kl_to_q": 0.004260736517608166,
+      "p0_gap": 0.001278222305700183,
+      "p0_expected_rm": 0.6595188975334167,
+      "actor_expected_rm_mean": 0.6611592471599579,
+      "actor_kl_policy_to_p0_mean": 0.004399801138788462,
+      "actor_gap_mean": 0.0009577912860549986
+    }
+  },
+  "rows": [
+    {
+      "model": "P0",
+      "mean_expected_rm_1024": 0.6595188975334167,
+      "delta_rm_vs_p0_1024": 0.0,
+      "test_ndcg100_232049": 0.12134252439783601,
+      "delta_test_ndcg_vs_p0": 0.0,
+      "paired_uid_bootstrap95_delta_ndcg_vs_p0": [
+        0.0,
+        0.0
+      ],
+      "delta_test_ndcg_vs_ce": -0.004809421173953124,
+      "paired_uid_bootstrap95_delta_ndcg_vs_ce": [
+        -0.0054155058490040105,
+        -0.004131889015605626
+      ],
+      "delta_test_ndcg_vs_beta_0.1": 0.000644659535375828,
+      "paired_uid_bootstrap95_delta_ndcg_vs_beta_0.1": [
+        0.00046026613512340257,
+        0.0008363023113912948
+      ],
+      "query_count": 232049,
+      "uid_count": 4812,
+      "oov_misses": 34520
+    },
+    {
+      "model": "CE",
+      "mean_expected_rm_1024": 0.6597293019294739,
+      "delta_rm_vs_p0_1024": 0.0002104043960571289,
+      "test_ndcg100_232049": 0.12615194557178913,
+      "delta_test_ndcg_vs_p0": 0.004809421173953124,
+      "paired_uid_bootstrap95_delta_ndcg_vs_p0": [
+        0.004131889015605626,
+        0.0054155058490040105
+      ],
+      "delta_test_ndcg_vs_ce": 0.0,
+      "paired_uid_bootstrap95_delta_ndcg_vs_ce": [
+        0.0,
+        0.0
+      ],
+      "delta_test_ndcg_vs_beta_0.1": 0.0054540807093289515,
+      "paired_uid_bootstrap95_delta_ndcg_vs_beta_0.1": [
+        0.004702995412847171,
+        0.006130298743573163
+      ],
+      "query_count": 232049,
+      "uid_count": 4812,
+      "oov_misses": 34520
+    },
+    {
+      "model": "beta_0.03",
+      "mean_expected_rm_1024": 0.6757657527923584,
+      "delta_rm_vs_p0_1024": 0.01624685525894165,
+      "test_ndcg100_232049": 0.11485729304531134,
+      "delta_test_ndcg_vs_p0": -0.006485231352524677,
+      "paired_uid_bootstrap95_delta_ndcg_vs_p0": [
+        -0.007243150004811663,
+        -0.0056172818975991955
+      ],
+      "delta_test_ndcg_vs_ce": -0.011294652526477801,
+      "paired_uid_bootstrap95_delta_ndcg_vs_ce": [
+        -0.012443495348630484,
+        -0.009828996909840057
+      ],
+      "delta_test_ndcg_vs_beta_0.1": -0.005840571817148849,
+      "paired_uid_bootstrap95_delta_ndcg_vs_beta_0.1": [
+        -0.006491935583167461,
+        -0.0050706747686706756
+      ],
+      "query_count": 232049,
+      "uid_count": 4812,
+      "oov_misses": 34520
+    },
+    {
+      "model": "beta_0.1",
+      "mean_expected_rm_1024": 0.6641217470169067,
+      "delta_rm_vs_p0_1024": 0.00460284948348999,
+      "test_ndcg100_232049": 0.12069786486246019,
+      "delta_test_ndcg_vs_p0": -0.000644659535375828,
+      "paired_uid_bootstrap95_delta_ndcg_vs_p0": [
+        -0.0008363023113912947,
+        -0.0004602661351234025
+      ],
+      "delta_test_ndcg_vs_ce": -0.0054540807093289515,
+      "paired_uid_bootstrap95_delta_ndcg_vs_ce": [
+        -0.006130298743573163,
+        -0.004702995412847171
+      ],
+      "delta_test_ndcg_vs_beta_0.1": 0.0,
+      "paired_uid_bootstrap95_delta_ndcg_vs_beta_0.1": [
+        0.0,
+        0.0
+      ],
+      "query_count": 232049,
+      "uid_count": 4812,
+      "oov_misses": 34520
+    },
+    {
+      "model": "beta_0.3",
+      "mean_expected_rm_1024": 0.6611592471599579,
+      "delta_rm_vs_p0_1024": 0.0016403496265411377,
+      "test_ndcg100_232049": 0.12125574659007315,
+      "delta_test_ndcg_vs_p0": -8.677780776285475e-05,
+      "paired_uid_bootstrap95_delta_ndcg_vs_p0": [
+        -0.0001822830659644392,
+        4.2467195897085305e-06
+      ],
+      "delta_test_ndcg_vs_ce": -0.0048961989817159785,
+      "paired_uid_bootstrap95_delta_ndcg_vs_ce": [
+        -0.0055033727550638815,
+        -0.004201915543789031
+      ],
+      "delta_test_ndcg_vs_beta_0.1": 0.0005578817276129732,
+      "paired_uid_bootstrap95_delta_ndcg_vs_beta_0.1": [
+        0.00041079538151041174,
+        0.0007078119927197811
+      ],
+      "query_count": 232049,
+      "uid_count": 4812,
+      "oov_misses": 34520
+    }
+  ]
+}

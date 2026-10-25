@@ -1,0 +1,96 @@
+{
+  "source": "yandex/yambda flat/50m/listens.parquet",
+  "revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+  "source_sha256": "eed9cbd094af1e189507d2f8132a0dc9653b90e65480125c7cdccd601e0592d1",
+  "catalog_size": 100000,
+  "train_sample_rate": 0.1,
+  "seed": 17,
+  "events": 46467212,
+  "users": 9238,
+  "train_anchor_count": 4110754,
+  "train_anchor_sampling": "independent Bernoulli sample over supported train events; event-uniform in expectation",
+  "validation_event_count": 217014,
+  "test_event_count": 232049,
+  "exact_duplicate_rows_within_user_timestamp_item": 588035,
+  "user_timestamp_tie_groups": 4115565,
+  "max_tie_group_size": 163,
+  "split_codes": {
+    "train": 0,
+    "gap": 1,
+    "valid": 2,
+    "gap2": 3,
+    "test": 4,
+    "outside": 5
+  },
+  "protocol": {
+    "train_end_exclusive": 25823600,
+    "valid_start_inclusive": 25825400,
+    "valid_end_exclusive": 25911800,
+    "test_start_inclusive": 25913600,
+    "test_end_inclusive": 26000000,
+    "gap_seconds": 1800,
+    "window_seconds": 86400,
+    "history_rule": "strictly timestamp < target timestamp; tied targets share context",
+    "tie_history_order": "item_id ascending, disclosed canonical order for later histories only",
+    "target_catalog": "top training-frequency items; unsupported targets remain index rows with item_token=0 and score as misses",
+    "history_oov": "item_token=0 retained as an event in history"
+  },
+  "files": {
+    "candidate_item_ids.npy": {
+      "bytes": 400128,
+      "sha256": "319880c9257783261d1ad614c72ffe4ce0d7d221b3dce7f488780a7da99de1b0"
+    },
+    "context_end.npy": {
+      "bytes": 185868976,
+      "sha256": "872e7e5585c5b25c8e20dec76a3418985e3e1278a8126bde7c546e52e77e59a0"
+    },
+    "history_start.npy": {
+      "bytes": 185868976,
+      "sha256": "a154d391ee98c127808522c4593e5b000395ba43ba2e97c7baf57d9a6240af28"
+    },
+    "is_organic.npy": {
+      "bytes": 46467340,
+      "sha256": "41c7b23070bb361caaed5faa7cc28dad7f37d69208297d57c85a56769a3358a9"
+    },
+    "item_token.npy": {
+      "bytes": 185868976,
+      "sha256": "f01cb6468b7ef0303730ea7e69cee956630d64ee38dc270818cb624f866de5eb"
+    },
+    "played_ratio_pct.npy": {
+      "bytes": 92934552,
+      "sha256": "54c3fef4fab4899c15d93b3e7589258f5df37d182a8e0052d7fe544e38686d7a"
+    },
+    "split.npy": {
+      "bytes": 46467340,
+      "sha256": "b1f54b9c8b89874dba363edf6e1b4eecfce83c8a4270c1728b165a370ff16012"
+    },
+    "test_indices.npy": {
+      "bytes": 928324,
+      "sha256": "40dec33232ce369bb3e0b9f67dcafc1afd298899543de065b216501944297083"
+    },
+    "tie_group_size.npy": {
+      "bytes": 92934552,
+      "sha256": "c53652acf2b9f9937cd21d0d416fde79190b6c9ebbd7c253383f8d70d000e6ac"
+    },
+    "timestamp.npy": {
+      "bytes": 185868976,
+      "sha256": "a289c4908317d6ab7c1cdc6791c14f914527f1999f7f30cc36d739eff856a591"
+    },
+    "track_length_seconds.npy": {
+      "bytes": 92934552,
+      "sha256": "612db822a1ba759654b40e013711c34608662a19867e6c065a6a0b80bbb380ec"
+    },
+    "train_indices.npy": {
+      "bytes": 16443144,
+      "sha256": "90a38ccfc2098bd78299a92c62b6cfffdceab5b354283fe9f095d3bf81fbae3c"
+    },
+    "uid.npy": {
+      "bytes": 185868976,
+      "sha256": "cc283f5be992833dc991702b9b94e4e8e39ebfe3dd766cabd2cd27e4fa417b9a"
+    },
+    "valid_indices.npy": {
+      "bytes": 868184,
+      "sha256": "818724e7af64f32a21f33a24ee431cd343106c4d480fedc1404c78c2454e87a4"
+    }
+  }
+}

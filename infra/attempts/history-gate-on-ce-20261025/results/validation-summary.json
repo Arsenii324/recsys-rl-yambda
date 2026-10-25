@@ -1,0 +1,75 @@
+{
+  "data_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+  "mean_gate_minus_parent_across_two_fits": 0.011215044159459824,
+  "paired_bootstrap": "5,000 resamples of distinct UID clusters per seed; bootstrap each user\u2019s sampled query rows together.",
+  "results": [
+    {
+      "base_checkpoint_sha256": "352a67f210af1c8b260e3ceeb491c63879d86f5e37672fd375956ac62809a311",
+      "elapsed_seconds": 317.591468334198,
+      "examples_seen": 4110754,
+      "gate_best_step": 8029,
+      "gate_final_step": 8029,
+      "gate_minus_parent_ndcg100": 0.01113844490111726,
+      "ndcg100_all": {
+        "gpt": 0.0950553741346877,
+        "history_50": 0.09788886401279265,
+        "history_gate": 0.10619381903580495,
+        "history_only": 0.0675607734605241
+      },
+      "ndcg100_supported": {
+        "gpt": 0.11022190878326495,
+        "history_50": 0.11350749537661485,
+        "history_gate": 0.12313754526415234,
+        "history_only": 0.07834041449504185
+      },
+      "per_query_npz_sha256": "f1a98ee8885b7aa5d4a13f8ec87b54e8589a3550ac167f039b8ff3c2b0e7e22b",
+      "run_json_sha256": "a4d0ad38343ccd2103b32a2d892b29095e446b04ddaaf04522e9fc980d1fbdd2",
+      "seed": 17,
+      "supported_n": 8624,
+      "train_anchors": 4110754,
+      "uid_cluster_bootstrap_95pct": [
+        0.009474506986262652,
+        0.013001111898519975
+      ],
+      "uids": 3164,
+      "validation_event_indices_sha256": "950a0d20892fec4b383091752af797bee9d4096a49be97577edc25ed0c7f0a12",
+      "validation_n": 10000
+    },
+    {
+      "base_checkpoint_sha256": "f1c0292f66d2a9c766ac4adda1f558a129672813f886e49de7a5229d53de2f57",
+      "elapsed_seconds": 318.2395489215851,
+      "examples_seen": 4110754,
+      "gate_best_step": 8029,
+      "gate_final_step": 8029,
+      "gate_minus_parent_ndcg100": 0.011291643417802387,
+      "ndcg100_all": {
+        "gpt": 0.09430578820675008,
+        "history_50": 0.09809011379902145,
+        "history_gate": 0.10559743162455247,
+        "history_only": 0.0675607734605241
+      },
+      "ndcg100_supported": {
+        "gpt": 0.1093527228742464,
+        "history_50": 0.11374085551834583,
+        "history_gate": 0.12244600141993561,
+        "history_only": 0.07834041449504185
+      },
+      "per_query_npz_sha256": "8d2149ebb683303d94b953f2b7075baa51df644afcdc3b9f40529967c3ca273c",
+      "run_json_sha256": "b8f5faea46b17f8f3e81244fb9af578a0653e3c9103cc731ab32fb59b1d52bd8",
+      "seed": 29,
+      "supported_n": 8624,
+      "train_anchors": 4110754,
+      "uid_cluster_bootstrap_95pct": [
+        0.009575483771726873,
+        0.013077540236087983
+      ],
+      "uids": 3164,
+      "validation_event_indices_sha256": "950a0d20892fec4b383091752af797bee9d4096a49be97577edc25ed0c7f0a12",
+      "validation_n": 10000
+    }
+  ],
+  "schema": "history-gate-on-final-ce-validation-summary-v1",
+  "scope": "Exploratory; fixed reused validation seed991, 10,000 events; gate best=final at step 8029 for each seed; no test metrics.",
+  "trainer_sha256": "9e1768f4e55d3beefa8e1ebe1cbe0c007a775f95d088224105b6c9482db68de6",
+  "training_config_sha256": "c9b767661e66b70ec6f733849b9d9e93b1e9f545ff6215783c9a73d9e85206d5"
+}

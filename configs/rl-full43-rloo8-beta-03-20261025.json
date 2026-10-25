@@ -1,0 +1,86 @@
+{
+  "schema": "one-step-full43-rloo8-beta-sweep-v1",
+  "n_items": 100000,
+  "batch_size": 128,
+  "steps": 32000,
+  "profile_steps": 2000,
+  "candidate_doses": [
+    32000,
+    16000
+  ],
+  "profile_conservative_multiplier": 1.25,
+  "job_wall_budget_seconds": 6600,
+  "final_validation_reserve_seconds": 300,
+  "exact_q_reserve_seconds": 480,
+  "behavior_audit_reserve_seconds": 240,
+  "setup_and_save_reserve_seconds": 180,
+  "beta": 0.3,
+  "temperature": 1.0,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.0,
+  "gradient_clip_norm": 1.0,
+  "rloo_group_size": 8,
+  "seeds": [
+    17,
+    29
+  ],
+  "validation_event_count": 10000,
+  "validation_seed": 991,
+  "exact_q_event_count": 1024,
+  "exact_q_seed": 20261020,
+  "progress_steps": [
+    2000,
+    4000,
+    6000,
+    8000,
+    10000,
+    12000,
+    14000,
+    16000,
+    18000,
+    20000,
+    22000,
+    24000,
+    26000,
+    28000,
+    30000,
+    32000
+  ],
+  "evaluation_steps": [
+    2000,
+    8000,
+    16000,
+    32000
+  ],
+  "checkpoint_steps": [
+    32000
+  ],
+  "feature_dataset_id": "arsen4ikvar/recsys-yambda100k-20261019",
+  "aux_dataset_id": "arsen4ikvar/recsys-core-aux-20261019",
+  "feature_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+  "aux_manifest_sha256": "5253a228935b0205f9689ab832da0835e4c2ca7849e73fc562f5b6e1111bb059",
+  "base_checkpoint_sha256": "36b035e517d2792e1e0027b1d27f12f92c29688727d322135159f681ee0b1ea6",
+  "combined_rm_checkpoint_sha256": "cd2d36b22e03e6fc7e912bba8a09d2a18a9c54cae7c2fae4b928329c9f07f197",
+  "history_rm_checkpoint_sha256": "34a5053b43db71b42e9fafdcf3bef87fa884aa9d3da8257a332e63f063042d7c",
+  "anchor_sampling": "same existing Bernoulli-10% supported train anchors; one 32k*128 pass per arm, fixed seed permutation; no low-ratio/Listen+ threshold",
+  "primary_estimand": "within-reference beta-specific exact-q gap and full-catalog ranking/expected frozen RM; report Pareto points against same full43 parent, no cross-beta objective-gap comparison",
+  "qualitative_predictions": {
+    "beta_direction": "beta=0.03 puts stronger relative weight on the frozen RM tilt than beta=0.1; beta=0.3 puts stronger weight on the exact KL-to-parent term.",
+    "decision_readout": "Report all three beta values (0.03, 0.1, 0.3) as exploratory validation Pareto points for NDCG@100 and expected frozen RM; do not choose a winner from reused validation/test outcomes.",
+    "interpretation_limit": "Exact-q gaps are beta-specific optimizer diagnostics and are not comparable across beta values; no user-response or long-horizon claim."
+  },
+  "job_id": "rl-full43-rloo8-beta-03-20261025",
+  "arms": [
+    "rloo8"
+  ],
+  "dose_mode": "fixed",
+  "context_reinforce8_advantage": "per-sample frozen history-only baseline: R(h,a)-R_history(h), detached; mean over 8 iid actions; no group centering or reward normalization",
+  "run_id_prefix": "rl-full43-rloo8-beta-03-20261025",
+  "wall_budget_seconds": 5400,
+  "project_device_reservation_seconds": 10800,
+  "base_checkpoint_filename": "checkpoint_gpt_seed43_fullsupported.pt",
+  "base_model_id": "gpt_seed43_fullsupported",
+  "base_training_manifest_sha256": "aa5570c4e16cbd61e33457bd31970b356c8a49b9938de4ba90c773109bb85570",
+  "wandb_enabled": false,
+  "full_parent_anchor_history": "parent full-supported seed43, 41,142,628 training exposures; continued arms use pinned subset feature dataset and same Bernoulli-10% 4,110,754 anchor pool"
+}

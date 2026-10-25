@@ -1,0 +1,59 @@
+{
+  "schema": "exploratory-reused-r9-recommended-gate-minus-ce-uid-bootstrap-v1",
+  "interpretation": "previously viewed R9 test; fixed-fit exploratory comparison, no causal/randomized exposure interpretation",
+  "channel": "recommendation-driven observed events",
+  "metric": "all-target event-weighted NDCG@100; unsupported target rank is a miss",
+  "events": 117291,
+  "supported_events": 97938,
+  "unsupported_misses": 19353,
+  "uids": 3207,
+  "bootstrap_replicates": 1000,
+  "bootstrap": "UID-cluster percentile; fixed fits; two-fit mean is average of per-query seed contrasts",
+  "alignment_keys": [
+    "event_index",
+    "uid",
+    "target_class",
+    "supported",
+    "organic"
+  ],
+  "event_order_sha256": "628338e018d700881923c5059861e8d47c2b909b2c6fcea9cca78625a30600fa",
+  "sources": {
+    "gate_npz_sha256": "62188048e65a5c165c6e004298b2a8ca45871a35fe34fe8c160b8cbdadd24def",
+    "ce_parent_npz_sha256": "5f53fe2beb6f46c4f80ca901a6743e2942e962aa13428c8a9562c59e19d9598b"
+  },
+  "contrasts": {
+    "seed_17": {
+      "point": 0.0019000969659202695,
+      "ci95_uid_cluster_percentile": [
+        0.0011884684691717568,
+        0.0027673602385243803
+      ],
+      "users": 3207,
+      "events": 117291,
+      "bootstrap_replicates": 1000,
+      "estimand": "event-weighted paired contrast with UID-cluster resampling"
+    },
+    "seed_29": {
+      "point": 0.0018561409313038713,
+      "ci95_uid_cluster_percentile": [
+        0.0011019898871981726,
+        0.0026496735676287157
+      ],
+      "users": 3207,
+      "events": 117291,
+      "bootstrap_replicates": 1000,
+      "estimand": "event-weighted paired contrast with UID-cluster resampling"
+    },
+    "two_fit_mean": {
+      "point": 0.0018781189486120704,
+      "ci95_uid_cluster_percentile": [
+        0.001138527785061301,
+        0.0027025986203784136
+      ],
+      "users": 3207,
+      "events": 117291,
+      "bootstrap_replicates": 1000,
+      "estimand": "event-weighted paired contrast with UID-cluster resampling"
+    }
+  }
+}

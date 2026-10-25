@@ -1,0 +1,18 @@
+{
+  "n_items": 100000,
+  "batch_size": 512,
+  "eval_batch_size": 128,
+  "hidden_width": 32,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "steps": 8029,
+  "log_every": 100,
+  "eval_every": 2000,
+  "eval_event_count": 10000,
+  "selection_seed": 991,
+  "seed": 73,
+  "single_pass": true,
+  "select_by": "validation all-target NDCG@100",
+  "train_objective": "event-level negative log-likelihood under p=(1-g(h))*p_GPT+g(h)*p_recent64",
+  "gate_inputs": "frozen GPT final history state plus known-fraction, duplicate-event fraction, and max-repeat fraction over last 64 context positions"
+}

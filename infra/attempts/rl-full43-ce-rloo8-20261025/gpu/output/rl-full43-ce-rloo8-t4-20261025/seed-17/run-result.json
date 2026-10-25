@@ -1,0 +1,212 @@
+{
+  "mode": "rl-full43-continued-ce-rloo8-20261025",
+  "status": "complete",
+  "interpretation": "frozen one-step logged-listen proxy; not causal/OPE/long-horizon",
+  "seed": 17,
+  "preflight": false,
+  "config": {
+    "schema": "one-step-full43-continued-ce-rloo8-v1",
+    "n_items": 100000,
+    "batch_size": 128,
+    "steps": 32000,
+    "profile_steps": 2000,
+    "candidate_doses": [
+      32000,
+      16000
+    ],
+    "profile_conservative_multiplier": 1.25,
+    "job_wall_budget_seconds": 6600,
+    "final_validation_reserve_seconds": 300,
+    "exact_q_reserve_seconds": 480,
+    "behavior_audit_reserve_seconds": 240,
+    "setup_and_save_reserve_seconds": 180,
+    "beta": 0.1,
+    "temperature": 1.0,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.0,
+    "gradient_clip_norm": 1.0,
+    "rloo_group_size": 8,
+    "seeds": [
+      17,
+      29
+    ],
+    "validation_event_count": 10000,
+    "validation_seed": 991,
+    "exact_q_event_count": 1024,
+    "exact_q_seed": 20261020,
+    "progress_steps": [
+      2000,
+      4000,
+      6000,
+      8000,
+      10000,
+      12000,
+      14000,
+      16000,
+      18000,
+      20000,
+      22000,
+      24000,
+      26000,
+      28000,
+      30000,
+      32000
+    ],
+    "evaluation_steps": [
+      2000,
+      8000,
+      16000,
+      32000
+    ],
+    "checkpoint_steps": [
+      32000
+    ],
+    "feature_dataset_id": "arsen4ikvar/recsys-yambda100k-20261019",
+    "aux_dataset_id": "arsen4ikvar/recsys-core-aux-20261019",
+    "feature_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+    "aux_manifest_sha256": "5253a228935b0205f9689ab832da0835e4c2ca7849e73fc562f5b6e1111bb059",
+    "base_checkpoint_sha256": "36b035e517d2792e1e0027b1d27f12f92c29688727d322135159f681ee0b1ea6",
+    "combined_rm_checkpoint_sha256": "cd2d36b22e03e6fc7e912bba8a09d2a18a9c54cae7c2fae4b928329c9f07f197",
+    "history_rm_checkpoint_sha256": "34a5053b43db71b42e9fafdcf3bef87fa884aa9d3da8257a332e63f063042d7c",
+    "anchor_sampling": "same existing Bernoulli-10% supported train anchors; one 32k*128 pass per arm, fixed seed permutation; no low-ratio/Listen+ threshold",
+    "primary_estimand": "within-full43 frozen one-step completion-proxy exact-q gap; paired CE vs RLOO8 and full-catalog ranking; no user response or long-horizon claim",
+    "qualitative_predictions": {
+      "weak_parent_fit_hypothesis": "If the earlier CE margin mainly reflected a weak starting policy, the CE-minus-parent ranking gain should shrink when the reference is full-supported43.",
+      "reward_relevance_hypothesis": "If the completion-proxy reward versus next-item relevance tradeoff persists, RLOO8 may close more exact-q gap while ranking remains flat or declines versus this full-supported parent.",
+      "interpretation_if_rloo8_improves_ranking": "A ranking gain from RLOO8 over this strong parent would limit the earlier negative conclusion to its weaker reference; it would not establish user response or long-horizon benefit."
+    },
+    "job_id": "rl-full43-continued-ce-rloo8-20261025",
+    "arms": [
+      "ce",
+      "rloo8"
+    ],
+    "dose_mode": "fixed",
+    "context_reinforce8_advantage": "per-sample frozen history-only baseline: R(h,a)-R_history(h), detached; mean over 8 iid actions; no group centering or reward normalization",
+    "run_id_prefix": "rl-full43-ce-rloo8-20261025",
+    "wall_budget_seconds": 5400,
+    "project_device_reservation_seconds": 10800,
+    "base_checkpoint_filename": "checkpoint_gpt_seed43_fullsupported.pt",
+    "base_model_id": "gpt_seed43_fullsupported",
+    "base_training_manifest_sha256": "aa5570c4e16cbd61e33457bd31970b356c8a49b9938de4ba90c773109bb85570",
+    "wandb_enabled": false,
+    "full_parent_anchor_history": "parent full-supported seed43, 41,142,628 training exposures; continued arms use pinned subset feature dataset and same Bernoulli-10% 4,110,754 anchor pool"
+  },
+  "selected_common_dose": 32000,
+  "feature_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+  "aux_manifest_sha256": "5253a228935b0205f9689ab832da0835e4c2ca7849e73fc562f5b6e1111bb059",
+  "base_checkpoint_sha256": "36b035e517d2792e1e0027b1d27f12f92c29688727d322135159f681ee0b1ea6",
+  "combined_rm_checkpoint_sha256": "cd2d36b22e03e6fc7e912bba8a09d2a18a9c54cae7c2fae4b928329c9f07f197",
+  "history_rm_checkpoint_sha256": "34a5053b43db71b42e9fafdcf3bef87fa884aa9d3da8257a332e63f063042d7c",
+  "reward_variant": "combined",
+  "data_provenance": {
+    "data_runtime_path": "/kaggle/input/datasets/arsen4ikvar/recsys-yambda100k-20261019",
+    "data_source": "yandex/yambda flat/50m/listens.parquet",
+    "data_revision": "dd6f3a19eef5866e346c3270e098baa641a44948",
+    "data_source_sha256": "eed9cbd094af1e189507d2f8132a0dc9653b90e65480125c7cdccd601e0592d1",
+    "data_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+    "train_indices_file_sha256": "90a38ccfc2098bd78299a92c62b6cfffdceab5b354283fe9f095d3bf81fbae3c",
+    "train_anchor_count_used": 4110754,
+    "train_anchor_indices_used_sha256": "d1ec16bad678d913e14e2d7380b3358089398e042dd770e610d11bb0c612fc4a",
+    "validation_event_count_used": 10000,
+    "validation_event_indices_used_sha256": "950a0d20892fec4b383091752af797bee9d4096a49be97577edc25ed0c7f0a12"
+  },
+  "results": [
+    {
+      "arm": "ce",
+      "seed": 17,
+      "steps": 32000,
+      "training_examples_seen": 4096000,
+      "elapsed_seconds": 1075.8348231369998,
+      "train_seconds": 837.9900134610001,
+      "validation_seconds": 12.201303482000128,
+      "best_validation_ndcg100_descriptive": 0.09505537438392639,
+      "final_checkpoint": "/kaggle/working/rl-full43-ce-rloo8-t4-20261025/seed-17/ce/step-32000.pt",
+      "final_checkpoint_sha256": "352a67f210af1c8b260e3ceeb491c63879d86f5e37672fd375956ac62809a311"
+    },
+    {
+      "arm": "rloo8",
+      "seed": 17,
+      "steps": 32000,
+      "training_examples_seen": 4096000,
+      "elapsed_seconds": 1621.1768032740001,
+      "train_seconds": 1569.134387659,
+      "validation_seconds": 11.729724270000133,
+      "best_validation_ndcg100_descriptive": 0.08894702570438386,
+      "final_checkpoint": "/kaggle/working/rl-full43-ce-rloo8-t4-20261025/seed-17/rloo8/step-32000.pt",
+      "final_checkpoint_sha256": "b9da421f0dfd4a5b8f48fb7179e7ff110621153b724297000b229700522d29af"
+    }
+  ],
+  "exact_q": {
+    "scope": "exact optimizer comparator for same one-step frozen RM/reference/beta only",
+    "beta": 0.1,
+    "catalog_size": 100000,
+    "query_count": 1024,
+    "supported_query_count": 878,
+    "query_index_sha256": "27eebe3388f87343bd8989f1eb0158854e193d59b688de2a84d2aecc64c63e20",
+    "base_checkpoint_sha256": "36b035e517d2792e1e0027b1d27f12f92c29688727d322135159f681ee0b1ea6",
+    "combined_rm_sha256": "cd2d36b22e03e6fc7e912bba8a09d2a18a9c54cae7c2fae4b928329c9f07f197",
+    "exact_q_objective_mean": 0.6633285284042358,
+    "p0_expected_frozen_rm_mean": 0.6595188975334167,
+    "p0_kl_to_exact_q_mean": 0.03809650242328644,
+    "p0_exact_q_objective_gap_mean": 0.003809646237641573,
+    "p0_gap_identity_error_abs_mean": 1.418204078618146e-07,
+    "actors": {
+      "ce": {
+        "expected_frozen_rm": 0.6597293019294739,
+        "kl_policy_to_base": 0.16913607716560364,
+        "kl_policy_to_exact_q": 0.20512843132019043,
+        "q_objective_gap": 0.020512837916612625,
+        "identity_error_abs_mean": 1.4107178003541776e-07
+      },
+      "rloo8": {
+        "expected_frozen_rm": 0.6641217470169067,
+        "kl_policy_to_base": 0.025700248777866364,
+        "kl_policy_to_exact_q": 0.017767757177352905,
+        "q_objective_gap": 0.0017767639365047216,
+        "identity_error_abs_mean": 1.4440287543493469e-07
+      }
+    }
+  },
+  "behavior_audit": {
+    "scope": "same fixed seed-991 validation rows; common-uniform model action samples, not actual exposure/response",
+    "seed": 17,
+    "query_count": 10000,
+    "actions_per_query": 16,
+    "action_uniform_seed": 1957,
+    "models": {
+      "parent": {
+        "entropy_nats_mean": 7.806363865719736,
+        "top1_unique_items": 4614,
+        "top1_max_item_share": 0.0056,
+        "sample_unique_items": 48865,
+        "sample_max_item_share": 0.001175,
+        "top1_history_repeat_fraction": 0.5044,
+        "sample_history_repeat_fraction": 0.13399375,
+        "top1_mean_catalog_rank": 15091.3328,
+        "sample_mean_catalog_rank": 19958.51348125
+      },
+      "ce": {
+        "entropy_nats_mean": 8.077527281022071,
+        "top1_unique_items": 4983,
+        "top1_max_item_share": 0.0058,
+        "sample_unique_items": 50303,
+        "sample_max_item_share": 0.001425,
+        "top1_history_repeat_fraction": 0.5668,
+        "sample_history_repeat_fraction": 0.128375,
+        "top1_mean_catalog_rank": 12135.6321,
+        "sample_mean_catalog_rank": 19274.469275
+      },
+      "rloo8": {
+        "entropy_nats_mean": 7.704718486064673,
+        "top1_unique_items": 4474,
+        "top1_max_item_share": 0.0057,
+        "sample_unique_items": 47207,
+        "sample_max_item_share": 0.00130625,
+        "top1_history_repeat_fraction": 0.4966,
+        "sample_history_repeat_fraction": 0.1378125,
+        "top1_mean_catalog_rank": 14631.1914,
+        "sample_mean_catalog_rank": 19173.93540625
+      }
+    }
+  }
+}

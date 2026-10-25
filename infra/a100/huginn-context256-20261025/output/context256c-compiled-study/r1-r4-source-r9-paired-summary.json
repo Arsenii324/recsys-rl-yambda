@@ -1,0 +1,404 @@
+{
+  "schema": "exploratory-reused-r9-r1source-vs-r4source-paired-v1",
+  "interpretation": "same previously viewed R9 test event order; fixed model comparison, not fresh confirmation or seed-uncertainty CI",
+  "event_order_sha256_uint32": "628338e018d700881923c5059861e8d47c2b909b2c6fcea9cca78625a30600fa",
+  "test_indices_sha256": "40dec33232ce369bb3e0b9f67dcafc1afd298899543de065b216501944297083",
+  "events": 232049,
+  "uids": 4812,
+  "parent_backbone_sha256": "f8a7ec8c19194dc31cceb64d5ffad0827e93a83c61a4de348757ee7cfff928db",
+  "training": {
+    "architecture_note": "R1/R4-source H256, 32,768,000 training examples per fit",
+    "R1_source_worker_sha256": "6af021ba05aa2b71f7064e7abc49e14f7a6dd2de07e156571b906e01d98c8206",
+    "R4_resume_and_export_worker_sha256": "786263148b9cb593e19c0521d5f460dbd66692cec4ace4a4f6fc57a0cc2215e1",
+    "R1_train_seconds": {
+      "seed17": 1958.647,
+      "seed29": 1920.318
+    },
+    "R4_train_seconds": {
+      "seed17": 3635.4,
+      "seed29": 3480.295
+    },
+    "applied_updates": {
+      "R1_seed17": 31989,
+      "R1_seed29": 31988,
+      "R4_seed17": 31987,
+      "R4_seed29": 31988
+    },
+    "skipped_updates": {
+      "R1_seed17": 11,
+      "R1_seed29": 12,
+      "R4_seed17": 13,
+      "R4_seed29": 12
+    }
+  },
+  "sources": {
+    "R1source_seed17": {
+      "rank_npz": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed17/R1source/test-ranks.npz",
+      "rank_npz_sha256": "4dc5ae08c91c24c44f020e89b4b9870f9ae66c9de3c97ad33adbede2369c1df4",
+      "result_json": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed17/R1source/test-result.json",
+      "result_json_sha256": "da6112b761d4174cca7e6db0e94fb6c12bf1ed64f8a5ad2bb24a1b4513952ca4",
+      "checkpoint_sha256": "b55f4bf02b5ba99090144e45ccc954507b00b7d03fbb804a7b0773be6bf79ec5"
+    },
+    "R4source_seed17": {
+      "rank_npz": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed17/R4source/test-ranks.npz",
+      "rank_npz_sha256": "21eb42315e88d30ad37cfb2969e75c5a43aa77b385ece7147f3c6d9140395df4",
+      "result_json": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed17/R4source/test-result.json",
+      "result_json_sha256": "769c0118013cee655da5a22589cbcd2c8af7cdc8f051c26c597a5580671c9035",
+      "checkpoint_sha256": "2c099d393d9c77903584f903097f4db4e9626568734cb868085b516762d47563"
+    },
+    "R1source_seed29": {
+      "rank_npz": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed29/R1source/test-ranks.npz",
+      "rank_npz_sha256": "a8d4d583be0f5f75a9813dc04a014a64cee14a52f18dabb6e92139e8e206154c",
+      "result_json": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed29/R1source/test-result.json",
+      "result_json_sha256": "a7673f49d6b7aed5abe8eea93d9e1d6c7cb279ab80d625362032127b53204b23",
+      "checkpoint_sha256": "374fcd1b53025f297ed05b0507f6d6dbde5661be487e41d6df0110dfc229a9de"
+    },
+    "R4source_seed29": {
+      "rank_npz": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed29/R4source/test-ranks.npz",
+      "rank_npz_sha256": "96b3f68c50306b7fe588993aa8ba081605273613b9dd68e9e8b7bdda8029eb71",
+      "result_json": "infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/seed29/R4source/test-result.json",
+      "result_json_sha256": "5002ce0582bb2c67850b8457c5fe0a8dba300fd257611f17a33cf90a1a1289a0",
+      "checkpoint_sha256": "0c9a74a717050b9fb97c2d899d9941ca4e4366581946caa50ce3af614ade675f"
+    }
+  },
+  "subsets": {
+    "all": {
+      "seed17": {
+        "R1source": {
+          "events": 232049,
+          "supported_targets": 197529,
+          "ndcg@100": 0.1455214172743616,
+          "recall@100": 0.29777331511878957
+        },
+        "R4source": {
+          "events": 232049,
+          "supported_targets": 197529,
+          "ndcg@100": 0.14760898527345598,
+          "recall@100": 0.297363918827489
+        },
+        "R4_minus_R1": {
+          "ndcg@100": {
+            "point": 0.002087567999094379,
+            "ci95_percentile": [
+              0.0014760225136371738,
+              0.0027992711482975174
+            ],
+            "users": 4812,
+            "events": 232049,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          },
+          "recall@100": {
+            "point": -0.00040939629130054426,
+            "ci95_percentile": [
+              -0.001741966627417822,
+              0.0008151565043617074
+            ],
+            "users": 4812,
+            "events": 232049,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          }
+        }
+      },
+      "seed29": {
+        "R1source": {
+          "events": 232049,
+          "supported_targets": 197529,
+          "ndcg@100": 0.14801478243433766,
+          "recall@100": 0.29848006240061364
+        },
+        "R4source": {
+          "events": 232049,
+          "supported_targets": 197529,
+          "ndcg@100": 0.15096547711559202,
+          "recall@100": 0.30069942124292715
+        },
+        "R4_minus_R1": {
+          "ndcg@100": {
+            "point": 0.0029506946812543314,
+            "ci95_percentile": [
+              0.0022344387275175987,
+              0.0036457741268753683
+            ],
+            "users": 4812,
+            "events": 232049,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          },
+          "recall@100": {
+            "point": 0.002219358842313477,
+            "ci95_percentile": [
+              0.0011010185640344325,
+              0.0035570047034431
+            ],
+            "users": 4812,
+            "events": 232049,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          }
+        }
+      },
+      "two_fit_mean": {
+        "R1source_NDCG@100": 0.14676809985434966,
+        "R4source_NDCG@100": 0.149287231194524,
+        "R4_minus_R1_NDCG@100": {
+          "point": 0.0025191313401743557,
+          "ci95_percentile": [
+            0.0019749371918291675,
+            0.003099181765560185
+          ],
+          "users": 4812,
+          "events": 232049,
+          "bootstrap_replicates": 1000,
+          "estimand": "event-weighted paired contrast; UID-cluster resampling"
+        },
+        "R1source_Recall@100": 0.2981266887597016,
+        "R4source_Recall@100": 0.2990316700352081,
+        "R4_minus_R1_Recall@100": {
+          "point": 0.0009049812755064663,
+          "ci95_percentile": [
+            4.714745917957206e-05,
+            0.0017715459542230417
+          ],
+          "users": 4812,
+          "events": 232049,
+          "bootstrap_replicates": 1000,
+          "estimand": "event-weighted paired contrast; UID-cluster resampling"
+        }
+      }
+    },
+    "organic": {
+      "seed17": {
+        "R1source": {
+          "events": 114758,
+          "supported_targets": 99591,
+          "ndcg@100": 0.2533657314563224,
+          "recall@100": 0.4488837379529096
+        },
+        "R4source": {
+          "events": 114758,
+          "supported_targets": 99591,
+          "ndcg@100": 0.2563816428501496,
+          "recall@100": 0.44729779187507623
+        },
+        "R4_minus_R1": {
+          "ndcg@100": {
+            "point": 0.003015911393827216,
+            "ci95_percentile": [
+              0.001890765775158449,
+              0.004287613730430897
+            ],
+            "users": 3552,
+            "events": 114758,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          },
+          "recall@100": {
+            "point": -0.0015859460778333537,
+            "ci95_percentile": [
+              -0.0036130922888175107,
+              0.00021504273741224764
+            ],
+            "users": 3552,
+            "events": 114758,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          }
+        }
+      },
+      "seed29": {
+        "R1source": {
+          "events": 114758,
+          "supported_targets": 99591,
+          "ndcg@100": 0.25829403822431934,
+          "recall@100": 0.4505568239251294
+        },
+        "R4source": {
+          "events": 114758,
+          "supported_targets": 99591,
+          "ndcg@100": 0.2636757444794204,
+          "recall@100": 0.4547743948134335
+        },
+        "R4_minus_R1": {
+          "ndcg@100": {
+            "point": 0.005381706255101035,
+            "ci95_percentile": [
+              0.003996656061167792,
+              0.006910606142230627
+            ],
+            "users": 3552,
+            "events": 114758,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          },
+          "recall@100": {
+            "point": 0.004217570888304083,
+            "ci95_percentile": [
+              0.002243282936534725,
+              0.006240148011849627
+            ],
+            "users": 3552,
+            "events": 114758,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          }
+        }
+      },
+      "two_fit_mean": {
+        "R1source_NDCG@100": 0.2558298848403209,
+        "R4source_NDCG@100": 0.260028693664785,
+        "R4_minus_R1_NDCG@100": {
+          "point": 0.0041988088244641255,
+          "ci95_percentile": [
+            0.003206348196028578,
+            0.005262159214742513
+          ],
+          "users": 3552,
+          "events": 114758,
+          "bootstrap_replicates": 1000,
+          "estimand": "event-weighted paired contrast; UID-cluster resampling"
+        },
+        "R1source_Recall@100": 0.4497202809390195,
+        "R4source_Recall@100": 0.4510360933442549,
+        "R4_minus_R1_Recall@100": {
+          "point": 0.0013158124052353648,
+          "ci95_percentile": [
+            -1.323808023255398e-05,
+            0.0028305371761308128
+          ],
+          "users": 3552,
+          "events": 114758,
+          "bootstrap_replicates": 1000,
+          "estimand": "event-weighted paired contrast; UID-cluster resampling"
+        }
+      }
+    },
+    "recommended": {
+      "seed17": {
+        "R1source": {
+          "events": 117291,
+          "supported_targets": 97938,
+          "ndcg@100": 0.04000609378923953,
+          "recall@100": 0.14992625180107597
+        },
+        "R4source": {
+          "events": 117291,
+          "supported_targets": 97938,
+          "ndcg@100": 0.041185366767464864,
+          "recall@100": 0.1506679966919883
+        },
+        "R4_minus_R1": {
+          "ndcg@100": {
+            "point": 0.0011792729782253361,
+            "ci95_percentile": [
+              0.000589502394163956,
+              0.0018886903033900667
+            ],
+            "users": 3207,
+            "events": 117291,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          },
+          "recall@100": {
+            "point": 0.0007417448909123462,
+            "ci95_percentile": [
+              -0.0008940801232594932,
+              0.0022988368759913626
+            ],
+            "users": 3207,
+            "events": 117291,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          }
+        }
+      },
+      "seed29": {
+        "R1source": {
+          "events": 117291,
+          "supported_targets": 97938,
+          "ndcg@100": 0.040117101998952916,
+          "recall@100": 0.149687529307449
+        },
+        "R4source": {
+          "events": 117291,
+          "supported_targets": 97938,
+          "ndcg@100": 0.04068928489165143,
+          "recall@100": 0.14995182921110742
+        },
+        "R4_minus_R1": {
+          "ndcg@100": {
+            "point": 0.0005721828926985176,
+            "ci95_percentile": [
+              3.2729615956471935e-05,
+              0.0011488536606764335
+            ],
+            "users": 3207,
+            "events": 117291,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          },
+          "recall@100": {
+            "point": 0.0002642999036584222,
+            "ci95_percentile": [
+              -0.0014352133416610068,
+              0.001882725413941723
+            ],
+            "users": 3207,
+            "events": 117291,
+            "bootstrap_replicates": 1000,
+            "estimand": "event-weighted R4source minus R1source; UID-cluster resampling"
+          }
+        }
+      },
+      "two_fit_mean": {
+        "R1source_NDCG@100": 0.04006159789409622,
+        "R4source_NDCG@100": 0.04093732582955814,
+        "R4_minus_R1_NDCG@100": {
+          "point": 0.0008757279354619268,
+          "ci95_percentile": [
+            0.0004495049431984246,
+            0.0013364279850994539
+          ],
+          "users": 3207,
+          "events": 117291,
+          "bootstrap_replicates": 1000,
+          "estimand": "event-weighted paired contrast; UID-cluster resampling"
+        },
+        "R1source_Recall@100": 0.14980689055426247,
+        "R4source_Recall@100": 0.15030991295154786,
+        "R4_minus_R1_Recall@100": {
+          "point": 0.0005030223972853842,
+          "ci95_percentile": [
+            -0.0006088048507192557,
+            0.001581164523807869
+          ],
+          "users": 3207,
+          "events": 117291,
+          "bootstrap_replicates": 1000,
+          "estimand": "event-weighted paired contrast; UID-cluster resampling"
+        }
+      }
+    }
+  },
+  "identity_check": {
+    "passed": true,
+    "fields": [
+      "event_indices",
+      "uid",
+      "supported",
+      "organic"
+    ],
+    "four_archives": "R1source/R4source, seeds17/29",
+    "event_order_sha256_uint32": "628338e018d700881923c5059861e8d47c2b909b2c6fcea9cca78625a30600fa",
+    "test_indices_sha256": "40dec33232ce369bb3e0b9f67dcafc1afd298899543de065b216501944297083"
+  },
+  "bootstrap": {
+    "replicates": 1000,
+    "method": "event-weighted paired mean; resample UID clusters with replacement",
+    "reported_intervals_conditional_on": "the four fitted checkpoints; not initialization-seed uncertainty",
+    "seed_rule": "per-seed NDCG 411+seed+subset_index; per-seed Recall 511+seed+subset_index; two-fit NDCG 611+subset_index; two-fit Recall 711+subset_index; subset order all=0, organic=1, recommended=2",
+    "metric_and_uid_bootstrap_helper": "scripts/export_rl_grouped_test_cpu.py",
+    "metric_and_uid_bootstrap_helper_sha256": "e25a1229fb60d303c77b7bead4bfdcd8570b46e7284522f83fe5038a3d5d51ef"
+  }
+}

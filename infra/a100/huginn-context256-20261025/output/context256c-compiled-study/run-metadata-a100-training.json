@@ -1,0 +1,27 @@
+{
+  "backbone_sha256": "f8a7ec8c19194dc31cceb64d5ffad0827e93a83c61a4de348757ee7cfff928db",
+  "config_sha256": {
+    "17": "707cd544d9c95fc57aca7bb35a83b6cfb5e10ddedf5a31d8b017a8ab02dfb342",
+    "29": "8abc9f52339e8ef5f26c6128ee8fb6490a8431495e8b432b0adf2a146b1661b5"
+  },
+  "context_length": 256,
+  "examples_per_arm": 32768000,
+  "feature_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+  "feature_root": "data/processed/yambda100k-eventuniform",
+  "full_train_indices_sha256": "948a6d33e6a5055c868d65c59b2b81ce60ff856111c68d7659f57008f595c474",
+  "gpu_assignment": {
+    "seed17": "A100 physical 0",
+    "seed29": "A100 physical 1"
+  },
+  "index_root": "infra/kaggle/fromscratch-support-20261021/index_dataset",
+  "modes": [
+    "R1source",
+    "R4source",
+    "R4untiedsource"
+  ],
+  "phase": "train",
+  "schema": "huginn-context256-a100-run-v1",
+  "start_utc": "2026-10-25T18:19:33.660373+00:00",
+  "test_indices_sha256": "40dec33232ce369bb3e0b9f67dcafc1afd298899543de065b216501944297083",
+  "worker_sha256": "6af021ba05aa2b71f7064e7abc49e14f7a6dd2de07e156571b906e01d98c8206"
+}

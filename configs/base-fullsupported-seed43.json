@@ -1,0 +1,17 @@
+{
+  "n_items": 100000,
+  "width": 128,
+  "layers": 2,
+  "heads": 4,
+  "max_context": 64,
+  "dropout": 0.1,
+  "batch_size": 256,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "steps": 160714,
+  "eval_every": 20000,
+  "eval_event_count": 10000,
+  "partial_last_batch": true,
+  "single_pass": true,
+  "seed": 43
+}
