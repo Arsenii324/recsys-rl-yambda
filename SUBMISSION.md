@@ -30,7 +30,7 @@ CE+gate повышает NDCG над CE на .01119 (8.9% относительн
 
 Policy-gradient приблизились к exact q замороженной proxy-цели, но уступили matched CE по ranking. Парные exact-q−P0 и exact-q−RLOO NDCG интервалы включают ноль: ranking-прирост exact q не установлен, а optimizer shortfall полностью не исключён. Exact-q gap — диагностический objective; diversity/repeat измерены на генерациях, не фактических показах.
 
-**Многошаговый механизм.** Отдельный C=16 тест строит горизонт-4 PL slate по фиксированной истории и proxy-utility замороженной RM; target coverage recommendation-driven событий 2.2%, exact-Q даёт лишь .000624 J сверх myopic. Это не сравнимо с H256/H64 recurrent history encoding и не тестирует diffusion. H64 untied-контроль (14,510,880 параметров) ещё выполняется.
+**Многошаговый механизм.** Отдельный C=16 тест строит горизонт-4 PL slate по фиксированной истории и proxy-utility замороженной RM; target coverage recommendation-driven событий 2.2%, exact-Q даёт лишь .000624 J сверх myopic. Это не сравнимо с H256/H64 recurrent history encoding и не тестирует diffusion. Отдельный H64 four-mode control на момент этой записи ещё не завершён; он не входит в H256-сравнение.
 
 ## Интерпретация и ограничения
 
@@ -87,4 +87,4 @@ Per-query ranking NPZ проверяют R9 агрегаты и UID-bootstrap б
 - Grouped RL и completion strata: `research/results/rl-grouped-posthoc-20261025.md`, `research/results/rl-target-completion-strata-20261025.json`.
 - C finite-pool recurrence/proxy evidence: `research/results/continuation-q-runset-validation.md`.
 - Machine-readable beta sweep, figure, cached rank arrays, recommended-channel bootstrap, gate summary, configs and source files перечислены в `submission/manifest.sha256`.
-- R1/R4-source H256 per-query ranks, [paired UID-bootstrap summary](infra/a100/huginn-context256-20261025/output/context256c-compiled-study/r1-r4-source-r9-paired-summary.json) и [early-export provenance sidecar](infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/early-export-provenance.json).
+- R1/R4-source H256 per-query ranks, [paired three-arm summary](infra/a100/huginn-context256-20261025/output/context256c-compiled-study/three-arm-r9-exploratory-summary-20261025.json), [summary note](research/results/huginn-context256-three-arm-r9-20261025.md) и [early-export provenance sidecar](infra/a100/huginn-context256-20261025/output/context256c-compiled-study/test-export/results/early-export-provenance.json).
