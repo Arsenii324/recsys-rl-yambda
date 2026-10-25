@@ -1,0 +1,66 @@
+{
+  "analysis_timestamp_utc": "2026-10-25T21:06:45.133089Z",
+  "checkpoint_sha256": {
+    "combined_seed17_primary": "cd2d36b22e03e6fc7e912bba8a09d2a18a9c54cae7c2fae4b928329c9f07f197",
+    "history_seed17": "34a5053b43db71b42e9fafdcf3bef87fa884aa9d3da8257a332e63f063042d7c"
+  },
+  "cohort": {
+    "core_selection_sha256": "62fef8c1d9e89ea55ff1c86b75276f47f306b8ea3debb66862446c810c8cdb8f",
+    "data_manifest_sha256": "ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6",
+    "events_supported": 197529,
+    "events_total": 232049,
+    "events_unsupported": 34520,
+    "rm_selection_path": "artifacts/rm-test-cohort-20261020-r5/selection-frozen.json",
+    "rm_selection_sha256": "1fc599c35a5b346527c2da61153cd6194b0204198201f7b6d64ab6a3db11d3f3",
+    "test_indices_sha256": "40dec33232ce369bb3e0b9f67dcafc1afd298899543de065b216501944297083",
+    "unique_uids_supported": 4730,
+    "unique_uids_total": 4812
+  },
+  "denominator": "197,529 supported observed targets; unsupported catalog targets retained in the full 232,049-event cohort but excluded from conditional RM error because predictions are NaN",
+  "input_artifacts": {
+    "evaluator_sha256": "ceb6a7f1520d1eae8c7ff4f6b3787a7f36bda8125a01057f68b807606a11ef3c",
+    "per_query_npz_path": "artifacts/rm-test-cohort-20261020-cpu-r4/per-query-test.npz",
+    "per_query_npz_sha256": "022022e6b14d6b5da5aeb0ebc9b3eac75afcf2e17d5752a0d1da7467b16db916",
+    "run_metadata_path": "artifacts/rm-test-cohort-20261020-cpu-r4/per-query-test.run.json",
+    "run_metadata_sha256": "a11675f4d0997374cfe58ad50743c538d8c39cdae9069e94637955d29ceb3385"
+  },
+  "interpretation": "Posthoc integrity/metric reconciliation of a previously opened held-out cohort, not fresh independent confirmation. Observed-listen conditional prediction only; no causal response or counterfactual engagement inference.",
+  "label": "min(played_ratio_pct / 100, 1), conditional on observed listen",
+  "metrics": {
+    "combined_seed17_primary": {
+      "mae": 0.35025766491889954,
+      "mse": 0.16314013302326202,
+      "n_supported_events": 197529,
+      "n_unique_supported_uids": 4730,
+      "prediction_sha256": "cd2d36b22e03e6fc7e912bba8a09d2a18a9c54cae7c2fae4b928329c9f07f197"
+    },
+    "history_seed17": {
+      "mae": 0.36253616213798523,
+      "mse": 0.16803772747516632,
+      "n_supported_events": 197529,
+      "n_unique_supported_uids": 4730,
+      "prediction_sha256": "34a5053b43db71b42e9fafdcf3bef87fa884aa9d3da8257a332e63f063042d7c"
+    },
+    "train_item_mean": {
+      "mae": 0.40395113825798035,
+      "mse": 0.2018277943134308,
+      "n_supported_events": 197529
+    },
+    "train_mean": {
+      "mae": 0.4055973291397095,
+      "mse": 0.18471916019916534,
+      "n_supported_events": 197529
+    }
+  },
+  "schema": "rm-actual-checkpoint-posthoc-reconciliation-v1",
+  "status": "derived_from_existing_full_test_prediction_archive_no_new_inference",
+  "validation_checks": {
+    "clipped_targets_match_raw_ratio": true,
+    "combined_sha_matches_registered_actual_checkpoint": true,
+    "history_sha_matches_registered_checkpoint": true,
+    "unsupported_predictions_are_nan": {
+      "combined_seed17_primary": true,
+      "history_seed17": true
+    }
+  }
+}

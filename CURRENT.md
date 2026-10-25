@@ -1,3 +1,5 @@
+> Архивный снимок состояния на 25 октября 2026 года; актуальный основной отчёт — [README.md](README.md).
+
 # Current research state — 2026-10-25
 
 ## Higher target and hypotheses

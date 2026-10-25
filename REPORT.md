@@ -1,3 +1,5 @@
+> Архивный подробный журнал. Актуальный основной отчёт — [README.md](README.md).
+
 # Offline next-item recommendation and reward-model study
 
 **Working report, updated 2026-10-25.** This report summarizes validation evidence, the frozen R9 ranking test, the separately frozen logged-completion test, and the fixed C=16 proxy confirmation. The supplied assignment is preserved verbatim in [`task-original.txt`](task-original.txt); its SHA-256 is recorded in [`docs/task-interpretation.md`](docs/task-interpretation.md). The separate AI-generated research note is a proposal summary, not an assignment requirement or evidence of prior results. The current understanding layer and approved decision framework are in [`docs/RESEARCH_MAP.md`](docs/RESEARCH_MAP.md) and [`docs/RESEARCH_POSITION.md`](docs/RESEARCH_POSITION.md); detailed protocols and chronology remain in the linked notes and ledger.

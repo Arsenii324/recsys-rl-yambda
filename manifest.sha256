@@ -1,7 +1,7 @@
-29a5523cd4d27afa0c410acc708d592777721c5a69757de2348db755b417e015  ./CURRENT.md
-6516a8977441ec4bc53ae278659dc3a2cb4d33cffa5be7404add4b1d0fa57e93  ./README.md
-1708f74efb07e9c3f350f55826291beb6d3ee6bea00c95a99fdc75150b0bafe3  ./REPORT.md
-6516a8977441ec4bc53ae278659dc3a2cb4d33cffa5be7404add4b1d0fa57e93  ./SUBMISSION.md
+074dc813a66f74007774572c3356262d76df877352ffd77000a1bf70ebb93bbd  ./CURRENT.md
+eec94920aa4d23fde2aeba916a93a539e286b55ac8b4ee9482632697a796522f  ./README.md
+c3bb511b8c18fc51735760d77c7e28da3171711fd6ed9f87f8340a7fe5a1c976  ./REPORT.md
+6cd0692c8e239507e27028f3d907c91002ac8b56fcffde5ca75ed62a3ea97ed3  ./SUBMISSION.md
 62188048e65a5c165c6e004298b2a8ca45871a35fe34fe8c160b8cbdadd24def  ./artifacts/history-gate-ce-r9-reused-exploratory-20261025/per-query-test-ranks.npz
 a4b03b4e22ec5437aa33f9546493a9d01305cdc0ab9a9c7b020689128bd73df4  ./artifacts/history-gate-ce-r9-reused-exploratory-20261025/recommended-channel-contrast.json
 90b10acc7689878fc268ce250d41d7deb666b01c890864f000454729a29dd777  ./artifacts/history-gate-ce-r9-reused-exploratory-20261025/summary.json
@@ -54,7 +54,6 @@ c35bd324da037c8c386c51e9ff8aeefb25e07bb885a170975103cde374425878  ./infra/attemp
 a34e7ebf534aa811b36ded1b53cfc75512b1028c3b222c6e7a6e4bc8c6879845  ./infra/attempts/rl-full43-ce-rloo8-20261025/gpu/output/rl-full43-ce-rloo8-t4-20261025/seed-29/rloo8/metrics.jsonl
 b0cf6d28e6fde1ca9f83c52ee2c12629ef5431fd93ea04b264e6b444fbef6539  ./infra/attempts/rl-full43-ce-rloo8-20261025/gpu/output/rl-full43-ce-rloo8-t4-20261025/seed-29/run-result.json
 4dcd41edbbc7731d8332d8044bb9fd0cfa16f10e18b09f8d901aeda435d1ecb0  ./infra/attempts/rl-full43-rloo8-beta-sweep-recovery-20261025/gpu/output/rl43-rloo-beta-t4-recovery-1025/full-test-ranks-exploratory.npz
-d538e2fd475c336667edf16145b892cc95c957d35cc19ab31141f543df76a7ff  ./manifest.sha256
 b96f54d3ce2c53ba4da35d719a5079f079559ee2720be2fe71644fd6ff8d08c7  ./pyproject.toml
 b36c8206b91e99b33d48b152e026c1e2c4d6a5c0534def065b011ae59085dc55  ./research/diagnostics/exact_reward_tilt.py
 6137181dba50b2271ebf9b3cf339b054c817714c6a7573aa3e0b28f99279fb1a  ./research/results/continuation-q-runset-validation.md
@@ -83,3 +82,7 @@ a1a5ca3ad3d649db2b1600bd3b25327bfb40510557c6dc88dadbbc9264e1986e  ./src/recsys_t
 639c53fb14890321669190e6c493e550715252cfba0b596f1d56c4ab3406d4bb  ./src/recsys_tt2/rl_context_baseline.py
 7ba91f17975053024dffd4891d499745fafbb33eb54533cd8d607f0f0bf837a2  ./task-original.txt
 96b99162ada2342e08f235705dfd1d52b4b461fc76267ab7aae6c7bc5de54c0c  ./uv.lock
+793eec0061973ac906308d6907bcf6e18f483012a16f19035ff1167ef46dc4a0  ./docs/EXPERIMENTS_RU.md
+e5d8cd523347b5db1162c3178b92ac3fac2222c3459f2048dbebdfa11feee8f0  ./docs/REPRODUCING_RU.md
+73550b1ce8c9784f90fb8ed3217da13e772b316331be91c5f16140eb19d8ac16  ./docs/experiment-ledger.csv
+6ffb2b17a9dea095184614f068bd80463f66400e9c533ef85ac95e8c79d9726c  ./research/results/rm-actual-combined-checkpoint-reconciliation-posthoc-20261025.json
