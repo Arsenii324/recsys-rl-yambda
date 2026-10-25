@@ -1,5 +1,5 @@
 074dc813a66f74007774572c3356262d76df877352ffd77000a1bf70ebb93bbd  ./CURRENT.md
-eec94920aa4d23fde2aeba916a93a539e286b55ac8b4ee9482632697a796522f  ./README.md
+958518e65590fd09058b3e22967eb33e1aad54ee432f010f1c73bc5ea7a84ec0  ./README.md
 c3bb511b8c18fc51735760d77c7e28da3171711fd6ed9f87f8340a7fe5a1c976  ./REPORT.md
 6cd0692c8e239507e27028f3d907c91002ac8b56fcffde5ca75ed62a3ea97ed3  ./SUBMISSION.md
 62188048e65a5c165c6e004298b2a8ca45871a35fe34fe8c160b8cbdadd24def  ./artifacts/history-gate-ce-r9-reused-exploratory-20261025/per-query-test-ranks.npz
@@ -15,10 +15,14 @@ e875db4f559e25b18757f42e99b1aabf530dc1faa1a86a79d9f4c0b29ee5f04a  ./configs/rewa
 3ecff3c2f3c095a45edc8113354332e9595806e697b3b15dc7916938e741f3f6  ./configs/rl-full43-ce-rloo8-20261025.json
 ec9a09a5dd6b1b42a7c4ab5c30b3210ca67171a8c6cbc46e83c27b888e507838  ./configs/rl-full43-rloo8-beta-003-20261025.json
 a2ad147a69c918a4873fa7b483629649b27449d8fbe42ea10d46d995b171ff03  ./configs/rl-full43-rloo8-beta-03-20261025.json
+636f526656ca4213a5c79e9b29813f0f3a3bce53b8cbd729d11f8ee055a19b23  ./configs/rm-cpu-full-epoch.json
 ecc0aa56ac64c3d2a0351f4e02c60977035855a41b83ed8d88ad947c00d949b6  ./data/processed/yambda100k-eventuniform/manifest.json
 aa5570c4e16cbd61e33457bd31970b356c8a49b9938de4ba90c773109bb85570  ./data/processed/yambda100k-fullsupported-eventuniform/manifest.json
 34007c0a6746ba2bf1abebb106e609bac41ec83894205f31a93cf63d46e8e1a4  ./data/raw/yambda-50m/manifest.json
+793eec0061973ac906308d6907bcf6e18f483012a16f19035ff1167ef46dc4a0  ./docs/EXPERIMENTS_RU.md
+e5d8cd523347b5db1162c3178b92ac3fac2222c3459f2048dbebdfa11feee8f0  ./docs/REPRODUCING_RU.md
 663f74d100fd34cd16a9a5811690898e7be6b48415c59d962786d66a12de9c9f  ./docs/RESEARCH_MAP.md
+73550b1ce8c9784f90fb8ed3217da13e772b316331be91c5f16140eb19d8ac16  ./docs/experiment-ledger.csv
 707cd544d9c95fc57aca7bb35a83b6cfb5e10ddedf5a31d8b017a8ab02dfb342  ./infra/a100/huginn-context256-20261025/configs/context256c-seed17.json
 8abc9f52339e8ef5f26c6128ee8fb6490a8431495e8b432b0adf2a146b1661b5  ./infra/a100/huginn-context256-20261025/configs/context256c-seed29.json
 86e6496d4e418e171a00687545fcc9ea6db5919628b5c2a74486cec49eaaef3b  ./infra/a100/huginn-context256-20261025/output/context256c-compiled-study/r1-r4-source-r9-paired-summary.json
@@ -62,6 +66,7 @@ da1c8fb76faf4537e16854211f50d52db7a10f027856eab42539fec60c8e6f18  ./research/res
 d63989d8182d3f2d59b67fd292c73a24086d084d8b4e0fbe1baee7a906f1e87c  ./research/results/rl-grouped-posthoc-20261025.md
 504a55368eff1424052ff30ff2204dbf3683594f26303d055f217f6f9233056d  ./research/results/rl-p0-objective-comparison-20261025.md
 3e3a10f08b914e509d3ec35ab4314e1258bd7bec52a51b1c90ab8676eafcb493  ./research/results/rl-target-completion-strata-20261025.json
+6ffb2b17a9dea095184614f068bd80463f66400e9c533ef85ac95e8c79d9726c  ./research/results/rm-actual-combined-checkpoint-reconciliation-posthoc-20261025.json
 85988b50ef028e1ab953827e982c96deb477e2378baa74a00a943d636cb8d1de  ./research/results/rm-test-results-20261020.md
 2bc7b6404a9513acf196e681d3b286e869d106b1f9cea5be808603ca7f2ecebc  ./scripts/bootstrap_frozen_test_rankings.py
 9526132a7fc2bc10b0fc71de3766fbc48ad64c1cde9fa09b06970987c7c689e4  ./scripts/eval_sampled_actions.py
@@ -82,7 +87,3 @@ a1a5ca3ad3d649db2b1600bd3b25327bfb40510557c6dc88dadbbc9264e1986e  ./src/recsys_t
 639c53fb14890321669190e6c493e550715252cfba0b596f1d56c4ab3406d4bb  ./src/recsys_tt2/rl_context_baseline.py
 7ba91f17975053024dffd4891d499745fafbb33eb54533cd8d607f0f0bf837a2  ./task-original.txt
 96b99162ada2342e08f235705dfd1d52b4b461fc76267ab7aae6c7bc5de54c0c  ./uv.lock
-793eec0061973ac906308d6907bcf6e18f483012a16f19035ff1167ef46dc4a0  ./docs/EXPERIMENTS_RU.md
-e5d8cd523347b5db1162c3178b92ac3fac2222c3459f2048dbebdfa11feee8f0  ./docs/REPRODUCING_RU.md
-73550b1ce8c9784f90fb8ed3217da13e772b316331be91c5f16140eb19d8ac16  ./docs/experiment-ledger.csv
-6ffb2b17a9dea095184614f068bd80463f66400e9c533ef85ac95e8c79d9726c  ./research/results/rm-actual-combined-checkpoint-reconciliation-posthoc-20261025.json
